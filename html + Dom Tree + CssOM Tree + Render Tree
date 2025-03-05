@@ -1,0 +1,80 @@
+html code :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This is my page title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: blue;
+    }
+    p {
+      color: #333;
+      font-size: 16px;
+    }
+    b {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to HTML</h1>
+  <p>This is my <b>First</b> paragraph.</p>
+  <p>This is my <b>Second</b> paragraph</p>
+  <p>This is my third <b>paragraph</b>  </p>
+</body>
+</html>
+
+= = = = = = = = = = = = = = = = = = = = = = =
+Dom tree (Document object modl)
+
+Document
+│
+└── DOCTYPE: html
+│
+└── html (lang="en")
+    │
+    ├── head
+    │   ├── meta (charset="UTF-8")
+    │   ├── meta (name="viewport", content="width=device-width, initial-scale=1.0")
+    │   ├── title: "This is my page title"
+    │   └── style: [CSS rules]
+    │
+    └── body
+        ├── h1: "Welcome to HTML"
+        ├── p: "This is my [b: 'First'] paragraph."
+        ├── p: "This is my [b: 'Second'] paragraph"
+        └── p: "This is my third [b: 'paragraph']"
+
+= = = = = = = = = = = = = = = = = = = = = = = =
+
+cssOm tree
+
+
+CSSOM Tree
+│
+└── style rules
+    │
+    ├── body {font-family: Arial, sans-serif; background-color: #f0f0f0;}
+    ├── h1 {color: blue;}
+    ├── p {color: #333; font-size: 16px;}
+    └── b {color: red;}
+
+= = = = = = = = = = = = = = = = = = = = = = = =
+
+Render Tree = Dom tree + cssOm tree (only the visual elements)
+
+Render Tree
+│
+└── body (font-family: Arial, sans-serif; background-color: #f0f0f0)
+    │
+    ├── h1 (color: blue): "Welcome to HTML"
+    ├── p (color: #333; font-size: 16px): "This is my [b (color: red): 'First'] paragraph."
+    ├── p (color: #333; font-size: 16px): "This is my [b (color: red): 'Second'] paragraph"
+    └── p (color: #333; font-size: 16px): "This is my third [b (color: red): 'paragraph']"
