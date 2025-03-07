@@ -1,0 +1,106 @@
+How Browsers Render a Webpage (With JavaScript Involvement)
+1️⃣ Parsing HTML (Reading the Page Content)
+🛠 What happens?
+
+The browser reads the HTML file line by line to understand the page structure.
+📌 What is the result?
+
+It builds the DOM Tree (Document Object Model), which represents all the elements in the HTML.
+2️⃣ Parsing CSS (Reading the Page Styles)
+🛠 What happens?
+
+The browser reads CSS files, inline styles, and styles inside <style> tags.
+📌 What is the result?
+
+It creates the CSSOM (CSS Object Model), which stores all the styling rules.
+3️⃣ Executing JavaScript (Adding Dynamic Behavior)
+🛠 What happens?
+
+JavaScript runs at different times depending on how it's loaded:
+Synchronous scripts → Block the page until they finish.
+Asynchronous (async) or deferred (defer) scripts → Run later without blocking the page.
+📌 What is the result?
+
+JavaScript can modify the DOM (content) and CSSOM (styles).
+If it changes the page structure, the browser must update everything (which can slow things down).
+4️⃣ Constructing the Render Tree (Combining Everything)
+🛠 What happens?
+
+The browser merges the DOM and CSSOM to create the Render Tree (only elements that are visible are included).
+📌 What is the result?
+
+This tree determines what will actually be displayed on the screen.
+5️⃣ Layout Process (Positioning Elements)
+🛠 What happens?
+
+The browser calculates the size and position of all elements on the page.
+📌 What is the result?
+
+It decides where everything will appear on the screen.
+6️⃣ Painting (Displaying the Page)
+🛠 What happens?
+
+The browser takes the final Render Tree and converts it into pixels on the screen.
+📌 What is the result?
+
+The user sees the webpage!
+JavaScript's Impact on Performance
+🚀 Reflows and Repaints:
+
+If JavaScript constantly changes styles or page structure, the browser must recalculate everything → This slows down the page.
+⚡ Optimizing Performance:
+
+Use async/defer when loading JavaScript to avoid blocking rendering.
+Minimize unnecessary DOM changes to prevent slow reflows.
+Key Takeaway
+The browser reads, processes, and displays a webpage step by step.
+
+HTML → Content
+CSS → Styles
+JavaScript → Dynamic changes
+Efficient JavaScript coding ensures faster, smoother pages! 🚀
+ - - - - - - - -  - - - - - - - - - - - -  - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - -
+
+Sync vs Async vs defer
+
+JavaScript Loading Types in HTML
+When you include JavaScript in an HTML file using <script>, the browser can load and execute it in three different ways:
+
+1️⃣ Synchronous (sync by default)
+2️⃣ Asynchronous (async)
+3️⃣ Deferred (defer)
+
+1️⃣ Synchronous (Default Behavior)
+🔹 If you add a script like this:
+<script src="script.js"></script>
+
+👉 The browser stops everything, downloads the JavaScript file, and executes it before continuing to load the rest of the page.
+
+📌 Effect:
+Blocks HTML parsing → Slows down page loading.
+Good for scripts that must run before the page is shown.
+2️⃣ Async (async)
+
+🔹 If you add a script like this:
+<script src="script.js" async></script>
+👉 The browser downloads the script while parsing HTML but executes it immediately when it’s ready.
+
+📌 Effect:
+
+Faster page load than sync scripts.
+Execution order is unpredictable (whichever script loads first runs first).
+Best for independent scripts (like analytics).
+
+3️⃣ Defer (defer)
+<script src="script.js" defer></script>
+👉 The browser downloads the script while parsing HTML but waits until the entire HTML is loaded before running it.
+
+📌 Effect:
+
+Doesn’t block HTML parsing.
+Scripts run in order (unlike async).
+Best for scripts that modify the page after it loads.
+When to Use What?
+✅ Use synchronous scripts if the JavaScript must run before the page is shown (not recommended for large scripts).
+✅ Use async for scripts that don’t depend on HTML, like ads or analytics.
+✅ Use defer for scripts that need the full HTML before running (recommended for most cases).
