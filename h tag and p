@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- use the h1 element just one time to improve the seo -->
+  <h1 style = "color: blue; font-size: 30px;">Best food recipies</h1>
+  <!-- use h2 for main sections -->
+  <h2>mansaf</h2>
+  <!-- Comments can be used to explain code -->
+  <p style = "color:  red; font-size: 20px;">+ first you need to know that mansaf is the traditional dish in jordan</p>
+  <!-- nested paragraph tags (they will be seperated) -->
+   <p>mansaf needs many ingrediants<p>the main ingrediant is the rice</p></p>
+
+</body>
+</html>
